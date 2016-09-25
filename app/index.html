@@ -1,20 +1,13 @@
 <html ng-app="phonecatApp">
 <head>
-  
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="phone-list.component.js"></script>
 </head>
-<body ng-controller="PhoneListController">
+<body>
 
-<h1>{{message}}</h1>
+  <!-- Use a custom component to render a list of phones -->
+  <phone-list></phone-list>
 
-<p>Total number of phones : {{phones.length}} </p>
-  <ul>
-    <li ng-repeat="phone in phones">
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>
-
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="app.js"></script>
 </body>
 </html>

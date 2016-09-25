@@ -5,6 +5,8 @@
 <body ng-controller="PhoneListController">
 
 <h1>{{message}}</h1>
+
+<p>Total number of phones : {{phones.length}} </p>
   <ul>
     <li ng-repeat="phone in phones">
       <span>{{phone.name}}</span>

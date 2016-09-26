@@ -1,5 +1,5 @@
 var module = angular.module('phoneList'); 
-
+	
 /** PhoneListController 
 Controller used in the phone-list component
 Performs a nice GET request for the phones.json file

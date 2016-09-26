@@ -3,14 +3,22 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
   
+
+  <!-- Main app -->
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+
+  <!-- Phone Detail Component -->
+  <script src="phone-detail/phone-detail.module.js"></script>
+  <script src="phone-detail/phone-detail.component.js"></script>
+
+  <!-- Phone List Component -->
   <script src="phone-list/phone-list.module.js"></script>
   <script src="phone-list/phone-list.component.js"></script>
-  <script src="app.module.js"></script>
+
 </head>
 <body>
-
-  <!-- Use a custom component to render a list of phones -->
-  <phone-list></phone-list>
-
+	<div ng-view></div>
 </body>
+
 </html>

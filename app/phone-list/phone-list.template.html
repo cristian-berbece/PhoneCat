@@ -23,6 +23,9 @@
 
       <ul class="phones">
         <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy: $ctrl.orderProp">
+          <p>
+            <a href="#!/phones/{{phone.id}}">Details</a>
+          </p>
           <span>{{phone.name}}</span>
           <p>{{phone.snippet}}</p>
         </li>

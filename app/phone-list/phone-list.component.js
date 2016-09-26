@@ -2,29 +2,21 @@
 var module = angular.module('phoneList'); 
 
 
-var PhoneListController = function() {
-	this.phones = [
-        {
-          name: 'Nexus S',
-          snippet: 'Fast just got faster with Nexus S.',
-          age: 1,
-        }, {
-          name: 'Motorola XOOM™ with Wi-Fi',
-          snippet: 'The Next, Next Generation tablet.',
-          age: 2,
+var PhoneListController = function($http) {
+	var self = this;
+	
+	//default way of ordering list
+	self.orderProp = 'age';
 
-        }, {
-          name: 'MOTOROLA XOOM™',
-          snippet: 'The Next, Next Generation tablet.',
-          age: 3,
-        }
-      ];
-    this.orderProp = 'age';
-
+	//link is relative to index.html
+	$http.get('phones/phones.json').then(function(response) {
+		self.phones = response.data;
+	});
 };
 
+PhoneListController.$inject = ['$http'];
+
 module.component('phoneList', {
-	// template: componentTemplate,
     templateUrl: 'phone-list/phone-list.template.html',
-    controller: PhoneListController
+    controller: PhoneListController,
 });

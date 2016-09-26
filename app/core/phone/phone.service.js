@@ -4,7 +4,13 @@
 var module = angular.module('core.phone');
 
 var serviceConfig = ['$resource', function ($resource) {
-    return $resource('phone/:phoneId.json', {}, {
+    /**
+     * Returns the phone with the id 'phones'
+     * Which in this particular case is acutally the whole list
+     * VERY DIRTY TRICK
+     * DO NOT AGREE
+     */
+    return $resource('phones/:phoneId.json', {}, {
         query: {
             method: 'GET',
             params: {phoneId: 'phones'},

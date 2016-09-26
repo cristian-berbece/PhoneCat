@@ -1,9 +1,14 @@
 
 var module = angular.module('phoneList'); 
-
+var componentTemplate = '<ul>' +
+          '<li ng-repeat="phone in $ctrl.phones">' +
+            '<span>{{phone.name}}</span>' +
+            '<p>{{phone.snippet}}</p>' +
+          '</li>' +
+        '</ul>';
 
 var PhoneListController = function() {
-  this.phones = [
+	this.phones = [
         {
           name: 'Nexus S',
           snippet: 'Fast just got faster with Nexus S.'
@@ -18,7 +23,6 @@ var PhoneListController = function() {
 };
 
 module.component('phoneList', {
-	// template: componentTemplate,
-    templateUrl: 'phone-list/phone-list.template.html',
+    template: componentTemplate,
     controller: PhoneListController
 });
